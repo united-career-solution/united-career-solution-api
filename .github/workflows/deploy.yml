@@ -9,12 +9,12 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
 
       - name: Install Dependencies
@@ -34,4 +34,4 @@ jobs:
             git pull origin main
             npm install
             npm run build
-            pm2 restart backend || pm2 start npm --name "backend" -- start
+            pm2 restart api || pm2 start npm --name "api" -- start
