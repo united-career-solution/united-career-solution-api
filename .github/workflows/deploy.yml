@@ -24,6 +24,7 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
+          MONGODB_URI: "mongodb://dummy-string-just-to-pass-the-build-check"
 
       - name: Prepare Standalone Output
         run: |
